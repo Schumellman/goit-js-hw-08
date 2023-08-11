@@ -5,18 +5,10 @@ const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 
 const onPlay = function (data) {
-    localStorage.setItem("videoplayer-current-time", JSON.stringify(data.seconds));
+    localStorage.setItem("videoplayer-current-time", JSON.stringify(data));
 }
 player.on('timeupdate', throttle(onPlay, 1000));
 
 const currentTime = JSON.parse(localStorage.getItem("videoplayer-current-time"));
 
-player.setCurrentTime(currentTime.seconds).then(function(seconds) {
-}).catch(function(error) {
-    switch (error.name) {
-        case 'RangeError':
-            break;
-        default:
-            break;
-    }
-});
+player.setCurrentTime(currentTime);
