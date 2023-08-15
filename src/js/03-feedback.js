@@ -20,14 +20,11 @@ function onInputChange(evt) {
 
 function onFormSubmit(evt) {
     evt.preventDefault();
-    if (evt.email.value === null || evt.message.value === null) {
-        alert("Please enter all fields correctly")
-    }
-    else {
+    if (localStorage.getItem(FORM_Key !== false)) {
         console.log(data);
-        feedbackForm.reset();
-        localStorage.removeItem(FORM_Key);
-        data = {};
     }
     
+    feedbackForm.reset();
+    localStorage.removeItem(FORM_Key);
+    data = {};
 }
