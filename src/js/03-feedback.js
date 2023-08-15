@@ -20,7 +20,7 @@ function onInputChange(evt) {
 
 function onFormSubmit(evt) {
     evt.preventDefault();
-    if (localStorage.getItem(FORM_Key !== false)) {
+    if (localStorage.getItem(FORM_Key) !== false) {
         console.log(data);
     }
     
